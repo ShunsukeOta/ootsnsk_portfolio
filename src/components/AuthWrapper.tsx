@@ -19,17 +19,23 @@ export const AuthWrapper = ({ children }: { children: React.ReactNode }) => {
     if (inputPass === PASSWORD) {
       setIsAuthed(true);
     } else {
-      alert("パスワードが正しくありません");
+      alert("閲覧用パスワードが正しくありません");
     }
   };
 
   if (!isAuthed) {
     return (
-      <Box p={8} textAlign="center">
+      <Box 
+        p={{ base: 4, md: 8 }} // 小さい画面ではパディングを4、中くらいの画面では8に
+        textAlign="center"
+        // widthプロパティを追加し、画面幅によってコンポーネントの幅を調整
+        w={{ base: "90%", md: "50%", lg: "30%" }} 
+        mx="auto" // 左右のマージンを自動で設定して中央寄せにする
+      >
         <form onSubmit={handleSubmit}>
           <VStack gap={4}>
             <Heading as="h2" size="lg">
-              パスワードを入力してください
+              閲覧用パスワードを入力してください
             </Heading>
             <Input
               type="password"
@@ -38,7 +44,7 @@ export const AuthWrapper = ({ children }: { children: React.ReactNode }) => {
               onChange={(e) => setInputPass(e.target.value)}
             />
             <Button type="submit" colorScheme="blue">
-              入室
+              認証
             </Button>
           </VStack>
         </form>
