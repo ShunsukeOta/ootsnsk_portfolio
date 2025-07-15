@@ -1,5 +1,5 @@
 // src/components/SkillSheet.tsx
-import { Card, Grid, GridItem, Flex, Heading, Text, Box } from "@chakra-ui/react"
+import { Card, Grid, GridItem, Flex, Heading, Text } from "@chakra-ui/react"
 
 type Skill = {
   title: string
@@ -43,7 +43,7 @@ const skills: Skill[] = [
 
 export default function SkillSheet() {
   return (
-    <Box>
+    <>
       {/* 統合したヘッディング */}
       <Flex align="baseline" gap={4} mb={4}>
         <Heading as="h3">スキル</Heading>
@@ -78,6 +78,6 @@ export default function SkillSheet() {
         第二種電気工事士 / 2024年1月取得<br />
         日商簿記3級 / 2023年10月取得
       </Text>
-    </Box>
+    </>
   )
 }

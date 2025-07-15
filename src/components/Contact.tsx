@@ -11,12 +11,11 @@ import {
 import {
   FaPhone,
   FaGithub,
-  FaTwitter,
   FaEnvelope,
   FaExternalLinkAlt,
 } from "react-icons/fa";
 
-function Contact() {
+export default function Contact() {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopyEmail = async () => {
@@ -30,7 +29,7 @@ function Contact() {
   };
 
   return (
-    <Box>
+    <>
       <Flex align="baseline" gap={4} mb={4}>
         <Heading as="h3">連絡先</Heading>
         <Text textStyle="sm" color="gray.400">
@@ -98,8 +97,6 @@ function Contact() {
           </Flex>
         </Link>
       </VStack>
-    </Box>
+    </>
   );
 }
-
-export default Contact;

@@ -6,15 +6,25 @@ import SkillSheet from "./components/Skillsheet";
 import Works from "./components/Works";
 import Contact from "./components/Contact";
 
+import SectionBox from "./components/SectionBox";
+
 function App() {
   return (
     <Container maxW={{ base: "md", md: "2xl" }} py={{ base: 8, md: 12 }}>
       <Stack gap={12}>
         <Profile />
-        <Timeline />
-        <SkillSheet />
-        <Works />
-        <Contact />
+        <SectionBox>
+          <Timeline />
+        </SectionBox>
+        <SectionBox>
+          <Works />
+        </SectionBox>
+        <SectionBox>
+          <SkillSheet />
+        </SectionBox>
+        <SectionBox>
+          <Contact />
+        </SectionBox>
       </Stack>
     </Container>
   );

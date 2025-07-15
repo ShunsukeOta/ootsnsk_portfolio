@@ -1,7 +1,6 @@
 // src/components/Timeline.tsx
 import {
   Text,
-  Box,
   Heading,
   Flex,
   useToken,
@@ -85,14 +84,14 @@ export default function CustomTimeline() {
   const [brandDark] = useToken("colors", ["brand.dark"]);
 
   return (
-    <Box>
+    <>
       <Flex align="baseline" gap={4} mb={4}>
         <Heading as="h3">経歴</Heading>
         <Text textStyle="sm" color="gray.400">
           Career
         </Text>
       </Flex>
-      {/* maxWとmxをBoxに移動し、Timelineは子要素としてitems.mapを直接受け取る */}
+      {/* maxWとmxをに移動し、Timelineは子要素としてitems.mapを直接受け取る */}
       <Timeline.Root maxW="600px" mx="auto" whiteSpace="pre-line">
         {history.map((item, index) => (
           <TimelineItem key={index}>
@@ -114,6 +113,6 @@ export default function CustomTimeline() {
           </TimelineItem>
         ))}
       </Timeline.Root>
-    </Box>
+    </>
   );
 }
