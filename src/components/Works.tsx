@@ -1,0 +1,49 @@
+import { Accordion, Stack, Text, Link, Image } from "@chakra-ui/react"
+const items = [
+  { value: "a", title: "ポートフォリオサイト", date: "2025年6月", skill: "HTML5, CSS3, TypeScript, React, VITE, Chakra UI等", work: "https://github.com/ShunsukeOta/ootsnsk-portfolio.git", text: "学習中の段階ですが、React×TypeScript×Viteで環境構築を行い、Chakra UIを使用しスタイリングを行いました。自身の経歴・スキル等の表示に重きを置き、シンプルな構成の単一ページにまとめました。", screenshot: "/images/works_portfolio.png"},
+  { value: "b", title: "佐渡市観光ポータルサイト「さど観光ナビ」の制作業務", date: "2022年4月 - 2024年4月", skill: "TML5, CSS3, JavaScript, PHP, Adobe XD, Adobe Photoshop, XAMPP, Git", work: "https://www.visitsado.com/", text: "案件開始時に8名のチームでスタートし、メインコーダーおよびサブディレクションを担当しました。バックエンド側の作業を除き、フロントエンド開発をメインに、社内他部署やクライアントと動作仕様の確認や調整を行いながら、デザインをもとにWebサイトを制作しました。この案件では、連携会社が開発した独自CMSを使用しており、細かな仕様確認が必要となる複雑なプロジェクトでしたが、関係者との密な連携を図りながら進行しました。一通りの作業が完了し、運用保守フェーズに移行するまで携わりました。" },
+  { value: "c", title: "トータルカーケアショップ集客用WEBページの制作業務", date:"", skill: "HTML5, CSS3, JavaScript, PHP, Adobe XD, Adobe Photoshop, XAMPP, Git", work: "https://kobayashi-motors.com/", text: "WordPressを使用し、既存サイトのリニューアルプロジェクトにおいてメインコーダーを担当しました。本プロジェクトでは、集客効果を高めることが目的であったため、SEOを強く意識した設計・実装を行いました。具体的には、Page Speed Insightsを活用したパフォーマンス改善、メタ情報の設定、構造化データの作成を実施しました。また、リニューアル前のブログ記事を再分類し、設定を見直す作業にも従事。これにより、コンテンツ整理とユーザビリティの向上を図りました。クライアントと密に連携を取りながら、本番反映作業を完了し、運用保守フェーズに移行するまでのプロセスを一貫して担当しました。" },
+]
+
+export default function Works () {
+  return (
+    <Accordion.Root collapsible>
+      {items.map((item, index) => (
+        <Accordion.Item key={index} value={item.value}>
+          <Accordion.ItemTrigger>
+            <Stack gap="0">
+              <Text fontSize="sm" fontWeight="semibold">{item.title}</Text>
+              <Text fontSize="xs" color="fg.muted">
+                {item.date}
+              </Text>
+            </Stack>
+          </Accordion.ItemTrigger>
+          <Accordion.ItemContent>
+            <Accordion.ItemBody>
+              <Image
+                src={item.screenshot}
+                alt={`${item.title} のスクリーンショット`}
+                mt={4}
+                borderRadius="sm"
+                maxH="200px"
+                objectFit="cover"
+              />
+              <Text textStyle="sm" mt={2}>{item.text}</Text>
+              {item.skill && (<Text mt={5} textStyle="xs">使用技術: {item.skill}</Text>)}
+              {item.work && (
+                <Text textStyle="xs">
+                  <Link variant="underline"
+                        href={item.work}
+                        colorPalette="teal">
+                    成果物: {item.work}
+                  </Link>
+                </Text>
+              )}
+              
+            </Accordion.ItemBody>
+          </Accordion.ItemContent>
+        </Accordion.Item>
+      ))}
+    </Accordion.Root>
+  )
+}
