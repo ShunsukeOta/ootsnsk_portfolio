@@ -1,5 +1,5 @@
 // src/components/SkillSheet.tsx
-import { Card, Grid, GridItem } from "@chakra-ui/react"
+import { Card, Grid, GridItem, Flex, Heading, Text, Box } from "@chakra-ui/react"
 
 type Skill = {
   title: string
@@ -43,17 +43,41 @@ const skills: Skill[] = [
 
 export default function SkillSheet() {
   return (
-    <Grid templateColumns="repeat(auto-fit, minmax(280px, 1fr))" gap={4}>
-      {skills.map((skill, index) => (
-        <GridItem key={index}>
-          <Card.Root>
-            <Card.Body>
-              <Card.Title fontSize="md">{skill.title}</Card.Title>
-              <Card.Description fontSize="xs">{skill.description}</Card.Description>
-            </Card.Body>
-          </Card.Root>
-        </GridItem>
-      ))}
-    </Grid>
+    <Box>
+      {/* 統合したヘッディング */}
+      <Flex align="baseline" gap={4} mb={4}>
+        <Heading as="h3">スキル</Heading>
+        <Text textStyle="sm" color="gray.400">
+          Skills
+        </Text>
+      </Flex>
+      <Grid templateColumns="repeat(auto-fit, minmax(280px, 1fr))" gap={4}>
+        {skills.map((skill, index) => (
+          <GridItem key={index}>
+            <Card.Root>
+              <Card.Body>
+                <Card.Title fontSize="md">{skill.title}</Card.Title>
+                <Card.Description fontSize="xs">{skill.description}</Card.Description>
+              </Card.Body>
+            </Card.Root>
+          </GridItem>
+        ))}
+      </Grid>
+      
+      {/* 資格セクションをサブセクションとして追加 */}
+      <Flex align="baseline" gap={4} mt={8} mb={4}>
+        <Heading as="h4" size="md">
+          資格
+        </Heading>
+        <Text textStyle="sm" color="gray.400">
+          Certificates
+        </Text>
+      </Flex>
+      <Text fontSize="sm" color="whiteAlpha.800">
+        普通自動車一種免許 / 2023年4月取得<br />
+        第二種電気工事士 / 2024年1月取得<br />
+        日商簿記3級 / 2023年10月取得
+      </Text>
+    </Box>
   )
 }
