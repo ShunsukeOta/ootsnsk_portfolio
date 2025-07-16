@@ -25,7 +25,7 @@ export default function Profile() {
           <Heading as="h2" size="lg" color="whiteAlpha.900">
             太田 隼輔
           </Heading>
-          <Text color="gray.400" fontSize="sm">
+          <Text color="gray.400" fontSize={{base: "xs", md: "sm"}}>
             1997年10月17日
           </Text>
         </VStack>

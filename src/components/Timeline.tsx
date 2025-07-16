@@ -103,7 +103,7 @@ export default function CustomTimeline() {
             </TimelineConnector>
             <TimelineContent>
               <TimelineTitle>{item.role}</TimelineTitle>
-              <TimelineDescription>{item.year}</TimelineDescription>
+              <TimelineDescription fontSize={{base: "xs", md: "sm"}}>{item.year}</TimelineDescription>
               {item.description && (
                 <Text textStyle="sm" mt={0}>
                   {item.description}

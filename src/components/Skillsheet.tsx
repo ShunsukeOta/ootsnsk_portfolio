@@ -57,7 +57,7 @@ export default function SkillSheet() {
             <Card.Root>
               <Card.Body>
                 <Card.Title fontSize="md">{skill.title}</Card.Title>
-                <Card.Description fontSize="xs">{skill.description}</Card.Description>
+                <Card.Description fontSize={{base: "xs", md: "sm"}}>{skill.description}</Card.Description>
               </Card.Body>
             </Card.Root>
           </GridItem>

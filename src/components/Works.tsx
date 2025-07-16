@@ -21,7 +21,7 @@ export default function Works () {
             <Accordion.ItemTrigger>
               <Stack gap="0">
                 <Text fontSize="sm" fontWeight="semibold">{item.title}</Text>
-                <Text fontSize="xs" color="fg.muted">
+                <Text fontSize={{base: "xs", md: "sm"}} color="fg.muted">
                   {item.date}
                 </Text>
               </Stack>
