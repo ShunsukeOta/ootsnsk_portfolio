@@ -39,10 +39,18 @@ export const AuthWrapper = ({ children }: { children: React.ReactNode }) => {
               閲覧用パスワードを<span>入力してください</span>
             </Heading>
             <Input
+              type="text"
+              name="username"
+              autoComplete="username"
+              display="none"
+              aria-hidden="true"
+            />
+            <Input
               type="password"
               placeholder="Password"
               value={inputPass}
               onChange={(e) => setInputPass(e.target.value)}
+              autoComplete="current-password"
             />
             <Button type="submit" colorScheme="blue">
               認証
