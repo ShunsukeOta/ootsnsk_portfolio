@@ -38,7 +38,7 @@ export default function Contact() {
       </Flex>
       <VStack align="start" gap={{base: 2, md: 4}}>
         <Flex align="center" gap={4}>
-        <Box bg="white" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
+        <Box bg="white" borderRadius="xs" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
             <FaEnvelope color="black" />
           </Box>
           <Text fontSize={{ base: "xs", md: "sm"}}>
@@ -54,7 +54,7 @@ export default function Contact() {
           </Button>
         </Flex>
         <Flex align="center" gap={4}>
-          <Box bg="white" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
+          <Box bg="white" borderRadius="xs" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
             <FaPhone color="black" />
           </Box>
           <Text fontSize={{ base: "xs", md: "sm"}}>
@@ -74,7 +74,7 @@ export default function Contact() {
           style={{ textDecoration: "none" }}
         >
           <Flex align="center" gap={4}>
-          <Box bg="white" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
+          <Box bg="white" borderRadius="xs" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
               <FaGithub color="black" />
             </Box>
             <Text fontSize={{ base: "xs", md: "sm"}}>

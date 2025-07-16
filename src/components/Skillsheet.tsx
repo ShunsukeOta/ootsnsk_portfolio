@@ -8,37 +8,37 @@ type Skill = {
 
 const skills: Skill[] = [
   {
-    title: "HTML5 / HTML Standard",
-    description: "基本的な仕様の理解があります。",
+    title: "HTML5",
+    description: "セマンティックなHTMLマークアップを理解し、ウェブ標準に準拠した構造を構築できます。",
   },
   {
     title: "CSS / SCSS",
-    description: "基本的な仕様の理解があります。",
-  },
-  {
-    title: "WordPress",
-    description: "一般的なプラグインの調整やカスタムフィールド等への理解があります。",
-  },
-  {
-    title: "PHP",
-    description: "WordPressサイト制作における基本的な関数の挙動の理解があります。",
+    description: "レスポンシブデザインに対応したスタイリングが可能で、SCSSを用いた効率的な開発ができます。",
   },
   {
     title: "JavaScript",
-    description: "ES6以降の構文や非同期処理に関する基本的な理解があります。",
+    description: "ES6以降のモダンな構文を理解し、非同期処理を伴う機能の実装が可能です。",
   },
   {
-    title: "TypeScript",
-    description: "型定義やインターフェースの使用、基本的な型推論に対応できます。",
+    title: "WordPress",
+    description: "一般的なプラグインの調整やカスタムフィールドの活用、カスタマイズに関する知識があります。",
   },
   {
-    title: "React",
-    description: "Hooksやコンポーネント設計の基礎を理解し、簡単な構築が可能です。",
+    title: "PHP",
+    description: "WordPressサイトの構築・カスタマイズに必要な基本的な関数や構文を理解しています。",
   },
-  {
-    title: "Chakra UI",
-    description: "スタイルの一元管理やレスポンシブ対応の設計ができます。",
-  },
+  // {
+  //   title: "TypeScript",
+  //   description: "型定義やインターフェースを適切に利用し、堅牢なコードを記述できます。",
+  // },
+  // {
+  //   title: "React",
+  //   description: "Hooksやコンポーネント設計の基本を理解しており、ウェブアプリケーションの構築が可能です。",
+  // },
+  // {
+  //   title: "Chakra UI",
+  //   description: "豊富なコンポーネントと柔軟なプロパティを活用し、効率的なUI開発ができます。",
+  // },
 ]
 
 export default function SkillSheet() {
@@ -50,13 +50,14 @@ export default function SkillSheet() {
         Skills
         </Text>
       </Flex>
-      <Grid templateColumns="repeat(auto-fit, minmax(200px, 1fr))" gap={4}>
+      <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(2, 1fr)"}} gap={{base: 2, md: 4}} alignItems="stretch">
         {skills.map((skill, index) => (
           <GridItem key={index}>
             <Card.Root>
-              <Card.Body>
-                <Card.Title fontSize="md">{skill.title}</Card.Title>
-                <Card.Description fontSize={{base: "xs", md: "sm"}}>{skill.description}</Card.Description>
+              {/* <Card.Body py="4"> */}
+              <Card.Body px={{base: 4, md: 6}} py={{base: 3, md: 4}}>
+                <Card.Title fontSize={{base: "sm" , md: "md" }} mb="1">{skill.title}</Card.Title>
+                <Card.Description fontSize={{base: "sm", md: "md"}}>{skill.description}</Card.Description>
               </Card.Body>
             </Card.Root>
           </GridItem>
