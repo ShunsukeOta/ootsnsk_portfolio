@@ -1,4 +1,4 @@
-import { Container, Stack, Separator } from "@chakra-ui/react";
+import { Container, Stack, Box, Text } from "@chakra-ui/react";
 import Profile from "./components/Profile";
 import Timeline from "./components/Timeline";
 import SkillSheet from "./components/Skillsheet";
@@ -26,6 +26,11 @@ export default function App() {
           <Contact />
         </SectionBox>
       </Stack>
+      <Box as="footer" mt={12} py={4}>
+        <Text textAlign="center" fontSize="sm" color="gray.500">
+          © Shunsuke Ota 2025
+        </Text>
+      </Box>
     </Container>
   );
 }
