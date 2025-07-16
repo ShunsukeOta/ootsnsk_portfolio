@@ -70,10 +70,9 @@ export default function Contact() {
           href="https://github.com/ShunsukeOta"
           target="_blank"
           rel="noopener noreferrer"
-          _hover={{ color: "blue.300", textDecoration: "none" }}
-          style={{ textDecoration: "none" }}
+          colorPalette="teal"
         >
-          <Flex align="center" gap={4}>
+          <Flex align="center" gap="4">
           <Box bg="white" borderRadius="xs" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
               <FaGithub color="black" />
             </Box>
