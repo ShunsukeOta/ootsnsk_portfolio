@@ -26,16 +26,18 @@ export const AuthWrapper = ({ children }: { children: React.ReactNode }) => {
   if (!isAuthed) {
     return (
       <Box 
-        p={{ base: 4, md: 8 }} // 小さい画面ではパディングを4、中くらいの画面では8に
+        py={{ base: 20, md: 40 }} // 小さい画面ではパディングを4、中くらいの画面では8に
+        px={{ base: 4, md: 8}}
         textAlign="center"
         // widthプロパティを追加し、画面幅によってコンポーネントの幅を調整
-        w={{ base: "90%", md: "50%", lg: "30%" }} 
+        w={{ base: "100%", md: "400px", lg: "400px" }} 
+        maxW={400}
         mx="auto" // 左右のマージンを自動で設定して中央寄せにする
       >
         <form onSubmit={handleSubmit}>
           <VStack gap={4}>
-            <Heading as="h2" size="lg">
-              閲覧用パスワードを入力してください
+            <Heading as="h2" size={{base: "md", md: "lg"}}>
+              閲覧用パスワードを<span>入力してください</span>
             </Heading>
             <Input
               type="password"
