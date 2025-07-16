@@ -54,7 +54,6 @@ export default function SkillSheet() {
         {skills.map((skill, index) => (
           <GridItem key={index}>
             <Card.Root>
-              {/* <Card.Body py="4"> */}
               <Card.Body px={{base: 4, md: 6}} py={{base: 3, md: 4}}>
                 <Card.Title fontSize={{base: "sm" , md: "md" }} mb="1">{skill.title}</Card.Title>
                 <Card.Description fontSize={{base: "sm", md: "md"}}>{skill.description}</Card.Description>
@@ -64,7 +63,6 @@ export default function SkillSheet() {
         ))}
       </Grid>
       
-      {/* 資格セクションをサブセクションとして追加 */}
       {/* <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
         <Heading as="h4" fontSize={{ base: "md", md: "lg"}}>資格</Heading>
         <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
