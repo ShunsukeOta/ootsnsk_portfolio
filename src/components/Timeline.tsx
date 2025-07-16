@@ -85,10 +85,10 @@ export default function CustomTimeline() {
 
   return (
     <>
-      <Flex align="baseline" gap={4} mb={4}>
-        <Heading as="h3">経歴</Heading>
-        <Text textStyle="sm" color="gray.400">
-          Career
+      <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
+        <Heading as="h3" fontSize={{ base: "xl", md: "2xl"}}>経歴</Heading>
+        <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
+        About Me
         </Text>
       </Flex>
       {/* maxWとmxをに移動し、Timelineは子要素としてitems.mapを直接受け取る */}

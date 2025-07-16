@@ -9,10 +9,10 @@ const items = [
 export default function Works () {
   return (
     <>
-      <Flex align="baseline" gap={4} mb={4}>
-        <Heading as="h3">制作物</Heading>
-        <Text textStyle="sm" color="gray.400">
-          Works
+      <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
+        <Heading as="h3" fontSize={{ base: "xl", md: "2xl"}}>制作物</Heading>
+        <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
+        Works
         </Text>
       </Flex>
       <Accordion.Root>
@@ -47,7 +47,6 @@ export default function Works () {
                     </Link>
                   </Text>
                 )}
-                
               </Accordion.ItemBody>
             </Accordion.ItemContent>
           </Accordion.Item>

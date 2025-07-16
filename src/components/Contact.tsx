@@ -30,55 +30,42 @@ export default function Contact() {
 
   return (
     <>
-      <Flex align="baseline" gap={4} mb={4}>
-        <Heading as="h3">連絡先</Heading>
-        <Text textStyle="sm" color="gray.400">
+      <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
+        <Heading as="h3" fontSize={{ base: "xl", md: "2xl"}}>連絡先</Heading>
+        <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
           Contact
         </Text>
       </Flex>
-      <VStack align="start" gap={4}>
-        {/* メールアドレスの項目 */}
+      <VStack align="start" gap={{base: 2, md: 4}}>
         <Flex align="center" gap={4}>
-          <Box bg="white" p={2} boxShadow="sm">
-            <FaEnvelope size="18px" color="black" />
+        <Box bg="white" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
+            <FaEnvelope color="black" />
           </Box>
-          <Text fontSize="sm" color="whiteAlpha.800">
+          <Text fontSize={{ base: "xs", md: "sm"}}>
             ootsnsk.r@gmail.com
           </Text>
-          <Link
-            href="mailto:ootsnsk.r@gmail.com"
-            _hover={{ textDecoration: "none" }}
-          >
-            <Button size="xs" colorScheme="blue" variant="outline">
-              メール作成
-            </Button>
-          </Link>
           <Button
-            size="xs"
+            size={{base: "xs", md: "sm" }}
             colorScheme={isCopied ? "green" : "blue"}
             variant="outline"
             onClick={handleCopyEmail}
           >
-            {isCopied ? "コピーしました！" : "クリップボードにコピー"}
+            {isCopied ? "完了" : "コピー"}
           </Button>
         </Flex>
-
-        {/* 電話番号のリンク */}
         <Flex align="center" gap={4}>
-          <Box bg="white" p={2} boxShadow="sm">
-            <FaPhone size="18px" color="black" />
+          <Box bg="white" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
+            <FaPhone color="black" />
           </Box>
-          <Text fontSize="sm" color="whiteAlpha.800">
+          <Text fontSize={{ base: "xs", md: "sm"}}>
             080-3023-6131
           </Text>
           <Link href="tel:080-3023-6131" _hover={{ textDecoration: "none" }}>
-            <Button size="xs" colorScheme="blue" variant="outline">
+            <Button size={{base: "xs", md: "sm" }} colorScheme="blue" variant="outline">
               発信
             </Button>
           </Link>
         </Flex>
-
-        {/* GitHubのリンク（外部） */}
         <Link
           href="https://github.com/ShunsukeOta"
           target="_blank"
@@ -87,10 +74,10 @@ export default function Contact() {
           style={{ textDecoration: "none" }}
         >
           <Flex align="center" gap={4}>
-            <Box bg="white" p={2} boxShadow="sm">
-              <FaGithub size="18px" color="black" />
+          <Box bg="white" p={2} boxShadow="sm" fontSize={{ base: "12px", md: "18px" }}>
+              <FaGithub color="black" />
             </Box>
-            <Text fontSize="sm" color="whiteAlpha.800">
+            <Text fontSize={{ base: "xs", md: "sm"}}>
               github.com/ShunsukeOta
             </Text>
             <FaExternalLinkAlt size="12px" color="gray" />
