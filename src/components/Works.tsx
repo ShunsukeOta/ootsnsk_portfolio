@@ -1,5 +1,5 @@
 // src/components/Works.tsx
-import { Accordion, Stack, Text, Link, Image, Heading, Flex } from "@chakra-ui/react"
+import { Accordion, Stack, Text, Link, Heading, Flex } from "@chakra-ui/react"
 const items = [
   { value: "a", title: "ポートフォリオサイト", date: "2025年6月", skill: "HTML5, CSS3, TypeScript, React, VITE, Chakra UI等", work: "https://github.com/ShunsukeOta/ootsnsk-portfolio.git", text: "学習中の段階ですが、React×TypeScript×Viteで環境構築を行い、Chakra UIを使用しスタイリングを行いました。自身の経歴・スキル等の表示に重きを置き、シンプルな構成の単一ページにまとめました。", screenshot: ""},
   { value: "b", title: "佐渡市観光ポータルサイト「さど観光ナビ」の制作業務", date: "2022年4月 - 2024年4月", skill: "TML5, CSS3, JavaScript, PHP, Adobe XD, Adobe Photoshop, XAMPP, Git", work: "https://www.visitsado.com/", text: "案件開始時に8名のチームでスタートし、メインコーダーおよびサブディレクションを担当しました。バックエンド側の作業を除き、フロントエンド開発をメインに、社内他部署やクライアントと動作仕様の確認や調整を行いながら、デザインをもとにWebサイトを制作しました。この案件では、連携会社が開発した独自CMSを使用しており、細かな仕様確認が必要となる複雑なプロジェクトでしたが、関係者との密な連携を図りながら進行しました。一通りの作業が完了し、運用保守フェーズに移行するまで携わりました。" },
