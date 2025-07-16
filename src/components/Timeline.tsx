@@ -14,14 +14,14 @@ import {
   TimelineDescription,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { LuCheck, LuPackage, LuShip } from "react-icons/lu";
-import { MdSchool, MdWork } from "react-icons/md";
+import { MdSchool, MdLaptopMac } from "react-icons/md";
+import { FaTshirt, FaBuilding } from "react-icons/fa";
 
 type HistoryItem = {
   year: string;
   role: string;
   description?: string;
-  icon: "ship" | "check" | "package" | "MdSchool" | "MdWork";
+  icon: "MdSchool" | "MdLaptopMac" | "FaTshirt" | "FaBuilding"; // 型定義を更新
 };
 
 const history: HistoryItem[] = [
@@ -33,48 +33,46 @@ const history: HistoryItem[] = [
   {
     year: "2016年4月 - 2018年10月",
     role: "ダイヤモンド印刷工業株式会社 - 印刷機オペレーター",
-    icon: "MdWork",
+    icon: "FaBuilding",
   },
   {
     year: "2018年10月 - 2020年3月",
-    role: "古物商を取得し、オンライン古着販売をスタート",
+    role: "古物商を取得し、オンライン古着販売を開始",
     description:
       "実際に国内/国外の卸業者と繋がり仕入れ、販売を行っておりました。フリーマケットや、実際の古着屋を間借りし商品を販売も行っていました。\n古着販売EC(BASE)をカスタマイズする中で、WEB制作への興味が強くなりました",
-    icon: "MdWork",
+    icon: "FaTshirt",
   },
   {
-    year: "2020年4月 - 2021年3月",
+    year: "2020年10月 - 2021年3月",
     role: "本格的にWEB制作に関しての学習を開始",
-    icon: "MdWork",
+    icon: "MdLaptopMac",
   },
   {
     year: "2021年4月 - 2024年4月",
     role: "taneCREATIVE株式会社 - WEBコーダー",
     description:
       "新潟県佐渡等に本社を構えるWEB制作会社にて正社員として勤務\n Wordpressや連携企業の開発した独自CMSを利用した案件の対応を行いました。",
-    icon: "MdWork",
+    icon: "FaBuilding",
   },
   {
     year: " 現在",
-    role: "WEB制作関連の学習を行いながら就職活動中です",
+    role: "WEB制作関連の学習を行いながら就職活動中",
     description:
-      "新潟県佐渡等に本社を構えるWEB制作会社にて正社員として従事。Wordpressや連携企業の開発した独自CMSを利用した案件の対応を行いました。",
-    icon: "MdWork",
+      "",
+    icon: "MdLaptopMac",
   },
 ];
 
 const getIcon = (type: HistoryItem["icon"]): ReactNode => {
   switch (type) {
-    case "ship":
-      return <LuShip />;
-    case "check":
-      return <LuCheck />;
-    case "package":
-      return <LuPackage />;
-    case "MdWork":
-      return <MdWork />;
+    case "MdLaptopMac":
+      return <MdLaptopMac />;
     case "MdSchool":
       return <MdSchool />;
+    case "FaBuilding":
+      return <FaBuilding />;
+      case "FaTshirt":
+        return <FaTshirt />;
     default:
       return null;
   }
@@ -92,20 +90,21 @@ export default function CustomTimeline() {
         </Text>
       </Flex>
       {/* maxWとmxをに移動し、Timelineは子要素としてitems.mapを直接受け取る */}
-      <Timeline.Root maxW="600px" mx="auto" whiteSpace="pre-line">
+      <Timeline.Root size={{base: "lg", md: "xl"}} maxW="600px" mx="auto" whiteSpace="pre-line">
         {history.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineConnector>
               <TimelineSeparator />
+              {/* アイコンのサイズを調整 */}
               <TimelineIndicator color={brandDark}>
                 {getIcon(item.icon)}
               </TimelineIndicator>
             </TimelineConnector>
             <TimelineContent>
-              <TimelineTitle>{item.role}</TimelineTitle>
+              <TimelineTitle fontWeight="600" fontSize={{base: "sm", md: "md"}}>{item.role}</TimelineTitle>
               <TimelineDescription fontSize={{base: "xs", md: "sm"}}>{item.year}</TimelineDescription>
               {item.description && (
-                <Text textStyle="sm" mt={0}>
+                <Text fontSize={{base: "sm", md: "md"}} mt={2}>
                   {item.description}
                 </Text>
               )}

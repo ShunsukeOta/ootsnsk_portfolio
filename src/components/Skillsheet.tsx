@@ -44,7 +44,6 @@ const skills: Skill[] = [
 export default function SkillSheet() {
   return (
     <>
-      {/* 統合したヘッディング */}
       <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
         <Heading as="h3" fontSize={{ base: "xl", md: "2xl"}}>スキル</Heading>
         <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
@@ -65,17 +64,17 @@ export default function SkillSheet() {
       </Grid>
       
       {/* 資格セクションをサブセクションとして追加 */}
-      <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
+      {/* <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
         <Heading as="h4" fontSize={{ base: "md", md: "lg"}}>資格</Heading>
         <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
         Certificates
         </Text>
       </Flex>
-      <Text fontSize={{base: "xs", md: "sm" }} color="whiteAlpha.800">
+      <Text fontSize={{base: "sm", md: "md" }} color="whiteAlpha.800">
         普通自動車一種免許 / 2023年4月取得<br />
         第二種電気工事士 / 2024年1月取得<br />
         日商簿記3級 / 2023年10月取得
-      </Text>
+      </Text> */}
     </>
   )
 }

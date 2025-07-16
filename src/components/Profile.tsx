@@ -4,7 +4,7 @@ import { Flex, Heading, Text, Separator, VStack, Box, Image } from "@chakra-ui/r
 export default function Profile() {
   return (
     <>
-      <Separator mb={8} borderColor="whiteAlpha.400" />
+      <Separator mb={8}/>
       <Flex align="baseline" gap={4} mb={{base: 4, md: 8 }}>
         <Heading as="h3" fontSize={{ base: "xl", md: "2xl"}}>自己紹介</Heading>
         <Text textStyle={{base: "xs", md: "sm" }} color="gray.400">
@@ -22,7 +22,7 @@ export default function Profile() {
           />
         </Box>
         <VStack align="start" gap={0}>
-          <Heading as="h2" size="lg" color="whiteAlpha.900">
+          <Heading as="h2" size="lg">
             太田 隼輔
           </Heading>
           <Text color="gray.400" fontSize={{base: "xs", md: "sm"}}>
@@ -32,7 +32,6 @@ export default function Profile() {
       </Flex>
       <Text
         fontSize={{ base: "sm", md: "md" }}
-        color="whiteAlpha.800"
         lineHeight="tall"
         mt={4}
       >
@@ -42,7 +41,7 @@ export default function Profile() {
         以前のWeb制作会社では、作業の効率化を意識し、Webページ制作時に設定していた構造化文書の作成を簡素化するシステムをJavaScriptで開発しました。基本情報の入力だけで設定文を自動的に生成できる仕組みを実装し、実際の業務で活用しました。その結果、案件ごとの設定のばらつきがなくなり、運用が大幅に効率化されました。
         今後も常に新しい技術や手法を取り入れ、より良い成果を上げられるよう、自身の市場価値を高め、社会に貢献できる人材となれるよう努めていきたいと考えています。
       </Text>
-      <Separator mt={8} borderColor="whiteAlpha.400" />
+      <Separator mt={8}/>
     </>
   );
 }

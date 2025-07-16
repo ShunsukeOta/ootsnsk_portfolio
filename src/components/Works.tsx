@@ -19,8 +19,8 @@ export default function Works () {
         {items.map((item, index) => (
           <Accordion.Item key={index} value={item.value}>
             <Accordion.ItemTrigger>
-              <Stack gap="0">
-                <Text fontSize="sm" fontWeight="semibold">{item.title}</Text>
+              <Stack gap="0" py="2">
+                <Text fontSize={{base: "sm", md: "md"}} fontWeight="semibold">{item.title}</Text>
                 <Text fontSize={{base: "xs", md: "sm"}} color="fg.muted">
                   {item.date}
                 </Text>
@@ -31,15 +31,14 @@ export default function Works () {
                 <Image
                   src={item.screenshot}
                   alt={`${item.title} のスクリーンショット`}
-                  mt={4}
-                  borderRadius="sm"
+                  borderRadius="xs"
                   maxH="200px"
                   objectFit="cover"
                 />
-                <Text textStyle="sm" mt={2}>{item.text}</Text>
-                {item.skill && (<Text mt={5} textStyle="xs">使用技術: {item.skill}</Text>)}
+                <Text fontSize={{base: "sm", md: "md"}} my={4}>{item.text}</Text>
+                {item.skill && (<Text fontSize={{base: "xs", md: "sm"}}>使用技術: {item.skill}</Text>)}
                 {item.work && (
-                  <Text textStyle="xs">
+                  <Text fontSize={{base: "xs", md: "sm"}}>
                     <Link variant="underline"
                           href={item.work}
                           colorPalette="teal">
